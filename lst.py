@@ -63,7 +63,7 @@ def upload_to_dune(csv_data, api_key):
 
     payload = {
         "data": csv_data,
-        "description": f"LST tokens data from Jupiter API, updated {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')} UTC",
+        "description": f"LST tokens data from Jupiter API, updated {datetime.now(datetime.UTC).strftime('%Y-%m-%d %H:%M:%S')} UTC",
         "table_name": "lst_tokens",
         "is_private": False
     }
