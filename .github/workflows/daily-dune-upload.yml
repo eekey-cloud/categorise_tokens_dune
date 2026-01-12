@@ -1,9 +1,9 @@
-name: Daily LST Tokens Upload to Dune
+name: Weekly LST Tokens Upload to Dune
 
 on:
   schedule:
-    # Run daily at 12:00 AM UTC
-    - cron: '0 0 * * *'
+    # Run weekly on Monday at 12:00 AM UTC
+    - cron: '0 0 * * 1'
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
