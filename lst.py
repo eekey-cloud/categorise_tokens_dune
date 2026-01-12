@@ -20,12 +20,16 @@ def fetch_lst_tokens():
 
         for token in tokens:
             if 'tags' in token and 'lst' in token.get('tags', []):
+                # Convert supply values to integers (removing decimal places)
+                circ_supply = token.get('circSupply', 0)
+                total_supply = token.get('totalSupply', 0)
+
                 token_info = {
                     'id': token.get('id', 'N/A'),
                     'symbol': token.get('symbol', 'N/A'),
                     'decimals': token.get('decimals', 'N/A'),
-                    'circSupply': token.get('circSupply', 'N/A'),
-                    'totalSupply': token.get('totalSupply', 'N/A')
+                    'circSupply': int(circ_supply) if isinstance(circ_supply, (int, float)) else 0,
+                    'totalSupply': int(total_supply) if isinstance(total_supply, (int, float)) else 0
                 }
                 lst_tokens.append(token_info)
 
