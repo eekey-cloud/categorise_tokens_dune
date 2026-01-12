@@ -1,0 +1,38 @@
+name: Daily LST Tokens Upload to Dune
+
+on:
+  schedule:
+    # Run daily at 12:00 AM UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  fetch-and-upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run Python script
+        run: |
+          python lst.py
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: lst-tokens-data
+          path: |
+            lst_tokens_output.json
+            lst_tokens_output.csv
+          retention-days: 30
