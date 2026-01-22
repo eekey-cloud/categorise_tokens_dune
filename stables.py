@@ -35,7 +35,6 @@ STABLECOINS = [
     {'address': 'Ex5DaKYMCN6QWFA4n67TmMwsH8MJV68RX6YXTmVM532C', 'symbol': 'USDv'},
     {'address': '5H4voZhzySsVvwVYDAKku8MZGuYBC7cXaBKDPW4YHWW1', 'symbol': 'VGBP'}, 
     {'address': 'GcV9tEj62VncGithz4o4N9x6HWXARxuRgEAYk9zahNA8', 'symbol': 'jlEURC'}, 
-    {'address': 'GcV9tEj62VncGithz4o4N9x6HWXARxuRgEAYk9zahNA8', 'symbol': 'jlEURC'}, 
     {'address': 'usd63SVWcKqLeyNHpmVhZGYAqfE5RHE8jwqjRA2ida2', 'symbol': 'USDC+'},
     {'address': 'A9mUU4qviSctJVPJdBJWkb28deg915LYJKrzQ19ji3FM', 'symbol': 'USDC(Wormhole)'},
     {'address': 'Dn4noZ5jgGfkntzcQSUZ8czkreiZ1ForXYoV2H8Dm7S1', 'symbol': 'USDT(Wormhole)'},
