@@ -24,15 +24,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
-      - name: Run Python script
+      - name: Run LST tokens script
         run: |
           python lst.py
+
+      - name: Run stablecoins script
+        run: |
+          python stables.py
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: lst-tokens-data
+          name: token-data
           path: |
             lst_tokens_output.json
             lst_tokens_output.csv
+            stablecoin_output.json
+            stablecoin_output.csv
           retention-days: 30
